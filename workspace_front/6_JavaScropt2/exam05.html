@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            name: 'jack',
+            contact: '0101234456',
+            hello: function () {
+                return 'Hello everyone. I`m ' + this.name;
+            },
+            hobby: ['Java', 'Game', 'Book'],
+            score: {
+                kor: 80,
+                eng: 90,
+                math: 70
+            },
+            favoriteFruits: function () {
+                return ['Apple', 'Orange', 'Mango'];
+            },
+            avility: function () {
+                return {
+                    java: function () { return 100; },
+                    css: function () { return 90; },
+                    js: function () { return 70; }
+                };
+            },
+            helloTo: function (friend) {
+                console.log('Hello ' + friend.name);
+            },
+            Robot : function(){
+                this.name = 'Mazinga';
+                this.price = '500000';
+            }
+        };
+
+        console.log(person.name);
+        console.log(person['contact']);
+        console.log(person.hello());
+        console.log(person.hobby[2]);
+        console.log(person.score.math);
+        console.log(person.favoriteFruits()[2]);
+        console.log(person.avility().css());
+        person.helloTo({
+            name: 'Tom',
+            contact: '01012345678'
+        });
+
+        function Student(name){
+            this.name = name;
+        }
+
+        person.helloTo(new Student('Tom'));
+        var robot = new person.Robot();
+        console.log(robot);
+        
+
+        // [] 는 배열의 주소, {} 는 객체의 주소
+
+        // 1. arr 이라는 이름의 변수를 만들고
+        // 2. 비어있는 배열을 만든 다음 그 주소를 반환 받아
+        // 3. arr 변수에 배열의 주소를 저장하라.
+
+
+    </script>
+</body>
+
+</html>

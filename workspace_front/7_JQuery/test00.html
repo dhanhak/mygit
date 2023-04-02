@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<<<<<<< HEAD
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+
+<body>
+
+    <body>
+        <form id="myform">
+            <label><input type='radio' name='subject' value="html">HTML</label>
+            <label><input type='radio' name='subject' value="css">CSS</label>
+            <label><input type='radio' name='subject' value="javascript">Javascript</label>
+            <button type='submit'>입력값 확인</button>
+            <div id="result"></div>
+        </form>
+
+        <script>
+            $("#myform").on('submit', function (e) {
+                e.preventDefault();
+
+                let val = $("input[name='subject']:checked").val();
+
+                if (!val) {
+                    alert("과목을 선택하세요");
+                    return false;
+                }
+
+                let idx = $("input[name='subject']:checked").index("input[name='subject']");
+                $("#result").append("<div>과목 : " + val + "</div>");
+                let a = $("#result").append("<div>선택한 과목의 인덱스 : " + idx + "</div>");
+                a.prop('color','red');
+
+                // $("#myform").submit();
+
+            })
+        </script>
+    </body>
+=======
+</head>
+
+<body>
+    <select id="fruits">
+        <option value="apple">Apple</option>
+        <option value="mango">Mango</option>
+        <option value="orange">Orange</option>
+    </select>
+    <button id="btn">버튼</button>
+
+    <script>
+        document.getElementById("btn").onclick = function () {
+            let fruits = document.getElementById("fruits");
+            console.log(fruits.selectedIndex); // 의미 알기 공부하기 꼭 나옴
+            console.log(fruits.options[fruits.selectedIndex]); // option은 select 내부에 포함된 함수임.
+
+        }
+
+    </script>
+</body>
+>>>>>>> 1b2bd6a37a43ccf4ac4ee34e9b25d87619a892e4
+
+</html>
